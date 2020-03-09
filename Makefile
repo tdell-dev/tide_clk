@@ -17,5 +17,8 @@ clear: directories
 boost_example: directories
 	g++ -I ${BOOST_ROOT} ${SRC_ROOT}/example.cpp -o ${BUILD_PROD_ROOT}/example
 
+api_request_example:
+	g++ -std=c++11 ${SRC_ROOT}/requester_example.cpp -o req_ex -lboost_system -lcrypto -lssl -lcpprest -lpthread
+
 directories:
 	${MKDIR_P} ${BUILD_PROD_ROOT}
