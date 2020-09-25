@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
   int x, y;
   unsigned int pix_offset;
   for (int y=0; y <320; y++ ) {
-    for ( int x=0; x < 480; x++ ) {
+    for ( int x=0; x < finfo.line_length; x++ ) {
       pix_offset = x + y * finfo.line_length;
       *( (char*) (frame_buf_ptr + pix_offset) ) = 0;
     }

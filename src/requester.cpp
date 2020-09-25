@@ -1,3 +1,4 @@
+#include <iostream>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -119,7 +120,7 @@ int main(int argc, char* argv[])
  
   printf("Drawing to screen\n");
 
-  draw_bounding_regions( 480, 320, (char) 255, 1 );
+  draw_bounding_regions( finfo.line_length, 320, (char) 255, 1 );
 
   munmap(frame_buf_ptr, screensize);
 
