@@ -6,7 +6,7 @@ export CC= g++
 
 MKDIR_P = mkdir -p
 
-all: directories display clear boost_example
+all: install_cpprestsdk directories display clear boost_example
 
 display: directories
 	${CC} -I ${BOOST_ROOT} ${SRC_ROOT}/display.cpp -o ${BUILD_PROD_ROOT}/display
@@ -22,3 +22,7 @@ api_request_example:
 
 directories:
 	${MKDIR_P} ${BUILD_PROD_ROOT}
+
+install_cpprestsdk:
+	sudo apt-get update && sudo apt-get upgrade
+	sudo apt-get install g++ git libboost-atomic-dev libboost-thread-dev libboost-system-dev libboost-date-time-dev libboost-regex-dev libboost-filesystem-dev libboost-random-dev libboost-chrono-dev libboost-serialization-dev libwebsocketpp-dev openssl libssl-dev ninja-build libcpprest-dev git vim --fix-missing
